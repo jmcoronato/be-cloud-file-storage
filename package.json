@@ -1,0 +1,26 @@
+{
+  "name": "be-cloud-file-storage",
+  "version": "1.0.0",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch ./src/app.js"
+  },
+  "keywords": [],
+  "author": "Juan Coronato",
+  "license": "ISC",
+  "description": "BE Cloud File Storage",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "box-node-sdk": "^3.7.1",
+    "dotenv": "^16.4.5",
+    "dropbox": "^10.34.0",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "sqlite3": "^5.1.7"
+  },
+  "eslintConfig": {
+    "extends": "standard"
+  }
+}
