@@ -20,8 +20,7 @@ can quickly failover to a different provider without affecting the costumers.It 
 1. Clone the repository:
 
     ```bash
-    git clone <repository_URL>
-    cd project_name
+    git clone https://github.com/jmcoronato/be-cloud-file-storage.git
     ```
 
 2. Install the required dependencies:
