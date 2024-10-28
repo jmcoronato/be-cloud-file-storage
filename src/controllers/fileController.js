@@ -53,7 +53,7 @@ export function uploadFile(req, res) {
                 return res.status(500).json({ message: 'Database error', error: err });
             }
             if (row) {
-                // Si ya existe un archivo con el mismo nombre, retornar error 409
+                // Si ya existe un archivo con el mismo nombre tiro error 409
                 return res.status(409).json({ message: 'A file with the same name already exists', file_name: originalname });
             }
 

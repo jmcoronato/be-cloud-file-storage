@@ -12,7 +12,6 @@ export function uploadFileToDropbox(fileBuffer, fileName) {
         // Path donde se almacenará en Dropbox
         const filePath = `/${fileName}`;
 
-        // Declarar variables en el ámbito superior
         let fileId, fileSize, uploadedDate;
 
         // Subir archivo a Dropbox

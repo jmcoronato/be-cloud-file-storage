@@ -1,6 +1,6 @@
 import db from '../db/sqlite.js';
 
-const MAX_STORAGE_BYTES = 5 * Math.pow(2, 30)
+const MAX_STORAGE_BYTES = 5 * Math.pow(2, 30) // 5 GB
 
 const checkMonthlyStorageLimit = (req, res, next) => {
     const userId = req.user.userId;

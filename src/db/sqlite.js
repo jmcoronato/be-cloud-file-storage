@@ -41,11 +41,10 @@ db.serialize(() => {
         if (!row) { // Si el usuario no existe, insertar
           const hashedPassword = await hash(password, 10);
           db.run('INSERT INTO users (username, password, role) VALUES (?, ?, ?)', [username, hashedPassword, role], (err) => {
-            if (err) {
+            if (err)
               console.error(`Error inserting user ${username}:`, err);
-            } else {
+            else
               console.log(`User ${username} inserted successfully.`);
-            }
           });
         }
       });
