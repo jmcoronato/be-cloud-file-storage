@@ -1,6 +1,6 @@
 import db from '../db/sqlite.js';
 
-const MAX_STORAGE_BYTES = 5 * Math.pow(2, 30) // 5 GB
+const MAX_STORAGE_BYTES = 199 // 5 * Math.pow(2, 30) // 5 GB
 
 const checkMonthlyStorageLimit = (req, res, next) => {
     const userId = req.user.userId;
@@ -21,7 +21,7 @@ const checkMonthlyStorageLimit = (req, res, next) => {
 
         // Verificar si supera el limite
         if (totalStorageUsed >= MAX_STORAGE_BYTES) {
-            return res.status(401).json({ message: 'Storage limit exceeded. Cannot upload more files this month.' });
+            return res.status(409).json({ message: 'Storage limit exceeded. Cannot upload more files this month.' });
         }
 
         // Si no supera el limite continuo con la solicitud

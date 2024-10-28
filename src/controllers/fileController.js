@@ -31,9 +31,8 @@ function insertFileRecord(fileId, fileName, userId, fileSize, sharedUrl, uploade
     });
 }
 
-// Función para subir archivo y manejar la inserción en la base de datos
+// subir archivo e insertar en bbdd
 export function uploadFile(req, res) {
-    // Usar multer para manejar el archivo en memoria
     upload(req, res, (err) => {
         if (err) return res.status(400).json({ message: 'Error uploading file', error: err });
 
@@ -132,7 +131,7 @@ export function deleteFile(req, res) {
             return res.status(400).json({ message: 'Invalid file storage service' });
         }
 
-        // Llamar a la función de eliminación del archivo en el servicio
+        // Llamar a la funcion para eliminar el archivo en el servicio correspondiente
         deleteFileService(fileId)
             .then(() => {
                 // Borrar el registro en la base de datos tras eliminar en el servicio

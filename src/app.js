@@ -9,7 +9,7 @@ const app = express();
 // parsear JSON
 app.use(json());
 
-// Rutas de autenticacion
+// Rutas
 app.use('/auth', authRoutes);
 app.use('/user', userRoutes);
 app.use('/file', fileRoutes);

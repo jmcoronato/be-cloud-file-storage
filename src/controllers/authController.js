@@ -12,26 +12,25 @@ export function login(req, res) {
             return res.status(500).json({ message: 'Database error', error: err });
         }
         if (!user) {
-            return res.status(401).json({ message: 'Invalid Username' });
+            return res.status(401).json({ message: 'Invalid Credentials' });
         }
 
         const isMatch = await compare(password, user.password);
 
         if (!isMatch) {
-            return res.status(401).json({ message: 'Invalid Password' });
+            return res.status(401).json({ message: 'Invalid Credentials' });
         }
 
-        // Configuración de tiempo de expiración del token
         const expiresIn = process.env.JWT_EXPIRES_IN || '1h';
 
-        // Crear token JWT con los datos del usuario
+        // Generamos token JWT con los datos del usuario
         const token = sign(
             { userId: user.id, username: user.username, role: user.role },
             process.env.JWT_SECRET,
             { expiresIn }
         );
 
-        // Devolver el token y el tiempo de expiración
+        // devuelvo el token y el tiempo de expiracion
         res.json({ token, expiresIn });
     });
 }
